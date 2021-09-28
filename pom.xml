@@ -10,7 +10,7 @@
 	<packaging>pom</packaging>
 	<name>JEAF Project Parent</name>
 	<description>Maven project defines properties, settings and version of libraries, plugins and modules that are used by all JEAF projects.</description>
-	<url>https://github.com/anaptecs/jeaf</url>
+	<url>https://www.anaptecs.de/jeaf</url>
 
 	<developers>
 		<developer>
