@@ -82,6 +82,8 @@
 		<maven.failsafe.version>2.22.2</maven.failsafe.version>
 		<maven.wildfly.version>2.0.2.Final</maven.wildfly.version>
 		<maven.jacoco.version>0.8.6</maven.jacoco.version>
+		
+		<swagger.codegen.plugin.version>3.0.31</swagger.codegen.plugin.version>
 
 		<!-- Versions of dependent libraries -->
 		<junit.version>5.5.2</junit.version>
