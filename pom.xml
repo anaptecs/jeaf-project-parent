@@ -138,6 +138,34 @@
 	</dependencies>
 
 	<profiles>
+		<!-- Profile contains all plugin configurations that are required to check in generated code during build. -->
+		<profile>
+			<id>CheckinGeneratedCode</id>
+			<build>
+				<plugins>
+					<plugin>
+					    <artifactId>maven-scm-plugin</artifactId>
+					    <version>${maven.scmplugin.version}</version>
+					    <executions>
+					    	<execution>
+					    		<id>CheckinGeneratedCode</id>
+					    		<goals>
+					    			<goal>checkin</goal>
+					    		</goals>
+					    		<phase>prepare-package</phase>
+					    		<configuration>
+					    			<message>[maven-scm-plugin] Checkin of generated files during build</message>
+					    			<excludes>**/pom.xml</excludes>
+					    			<includes>**/*</includes>
+					    			<basedir>${basedir}/src-gen</basedir>
+					    		</configuration>
+					    	</execution>
+					    </executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		
 		<!-- Profile with all settings for releasing to central maven repo -->
 		<profile>
 			<id>Release</id>
