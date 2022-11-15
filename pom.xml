@@ -85,6 +85,7 @@
 		<maven.scmplugin.version>1.13.0</maven.scmplugin.version>
 		
 		<swagger.codegen.plugin.version>3.0.34</swagger.codegen.plugin.version>
+		<openapi-validator-plugin>1.0.2</openapi-validator-plugin>
 
 		<!-- Versions of dependent libraries -->
 		<junit.version>5.5.2</junit.version>
