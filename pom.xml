@@ -14,7 +14,7 @@
 
 	<developers>
 		<developer>
-			<name>Tillmann Schall</name>
+			<name>JEAF Development Team</name>
 			<email>jeaf@anaptecs.de</email>
 			<organization>anaptecs GmbH</organization>
 			<organizationUrl>http://www.anaptecs.de</organizationUrl>
@@ -22,16 +22,16 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:https://bitbucket.org/anaptecs/jeaf-project-parent.git</connection>
-		<developerConnection>scm:git:https://bitbucket.org/anaptecs/jeaf-project-parent.git</developerConnection>
-		<url>https://bitbucket.org/anaptecs/jeaf-project-parent</url>
-	  <tag>HEAD</tag>
-  </scm>
+		<connection>scm:git:https://github.com/anaptecs/jeaf-project-parent.git</connection>
+		<developerConnection>scm:git:https://github.com/anaptecs/jeaf-project-parent.git</developerConnection>
+		<url>https://github.com/anaptecs/jeaf-project-parent.git</url>
+		<tag>HEAD</tag>
+	</scm>
 
 	<repositories>
 		<repository>
 			<id>oss.sonatype.org-snapshot</id>
-			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
