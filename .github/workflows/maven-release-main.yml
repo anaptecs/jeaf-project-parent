@@ -29,6 +29,7 @@ jobs:
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         gpg-passphrase: SIGN_KEY_PASS
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Build and Publish packages
       run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" --batch-mode release:prepare release:perform -PRelease
