@@ -9,6 +9,7 @@
 name: Maven Build Main (Java 11)
 
 on:
+  workflow_dispatch:
   workflow_call:
 
 jobs:
