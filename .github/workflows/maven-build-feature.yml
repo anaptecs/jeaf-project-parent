@@ -14,5 +14,5 @@ on:
       - 'feature/**'
 
 jobs:
-  anaptecs-job:
+  build:
     uses: anaptecs/jeaf-project-parent/.github/workflows/maven-build-feature-template.yml@main
