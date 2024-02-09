@@ -8,10 +8,6 @@
 name: Maven Build Feature Branch
 
 on:
-  push:
-    branches:
-      - 'feature/**'
-      
   workflow_call:
   
 jobs:
