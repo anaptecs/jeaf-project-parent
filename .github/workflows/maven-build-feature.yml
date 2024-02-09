@@ -30,7 +30,7 @@ jobs:
       with:
         java-version: ${{ matrix.java }}
         distribution: 'temurin'
-        cache: maven
+        cache: 'maven'
 
     - name: Build with Maven (Java ${{ matrix.java }})
       run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -B clean install
