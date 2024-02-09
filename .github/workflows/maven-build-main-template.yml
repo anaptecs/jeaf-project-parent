@@ -10,14 +10,6 @@ name: Maven Build Main (Java 11)
 
 on:
   workflow_call:
-    inputs:
-      ossrh-user:
-        required: true
-        type: string
-        
-      ossrh-token:
-        required: true
-        type: string
 
 jobs:
   build:
