@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Maven Release (Java 11)
+name: Maven Release Build
 
 on:
   workflow_dispatch:
