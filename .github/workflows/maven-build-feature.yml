@@ -15,4 +15,4 @@ on:
 
 jobs:
   anaptecs-job:
-    uses: anaptecs/jeaf-project-parent/.github/workflows/maven-build-feature-template.yml@main
+    uses: anaptecs/jeaf-project-parent/.github/workflows/templates/maven-build-feature-template.yml@main
