@@ -24,35 +24,12 @@ env:
   RELEASE_VERSION: ${{ inputs.releaseVersion }}
   TAG_NAME: ${{ inputs.tagName }}
 
+
+
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Set up JDK 11
-      uses: actions/setup-java@v4
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: 'maven'
-        server-id: ossrh
-        server-username: MAVEN_USERNAME
-        server-password: MAVEN_PASSWORD
-        gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
-        gpg-passphrase: SIGN_KEY_PASS
-        
-    - name: Configure git user
-      run: |
-        git config --global user.email "jeaf@anaptecs.de"
-        git config --global user.name "JEAF Development Team"
-        
-    - name: Build and Publish packages
-      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
-      shell: bash
-      env:
-        SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
-        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}      
+    uses: anaptecs/jeaf-project-parent/.github/workflows/maven-release-main-template.yml@main
+    with:
+      releaseVersion: $RELEASE_VERSION
+      tagName: $TAG_NAME
+    secrets: inherit
