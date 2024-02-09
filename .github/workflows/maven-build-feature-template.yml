@@ -21,12 +21,20 @@ jobs:
     name: Maven Feature Branch Build (Java ${{ matrix.java }})
     steps:
     - uses: actions/checkout@v4
+
+    - name: Cache local Maven repository
+      uses: actions/cache@v4
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+      
     - name: Set up JDK (Java ${{ matrix.java }})
       uses: actions/setup-java@v4
       with:
         java-version: ${{ matrix.java }}
         distribution: 'temurin'
-        cache: 'maven'
 
     - name: Build with Maven (Java ${{ matrix.java }})
       run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -B clean install
