@@ -10,6 +10,14 @@ name: Maven Build Main (Java 11)
 
 on:
   workflow_call:
+    inputs:
+      ossrh-user:
+        required: true
+        type: string
+        
+      ossrh-token:
+        required: true
+        type: string
 
 jobs:
   build:
@@ -31,5 +39,5 @@ jobs:
     - name: Build and Publish packages
       run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" --batch-mode clean deploy
       env:
-        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}      
+        MAVEN_USERNAME: ${{ inputs.ossrh-user }}
+        MAVEN_PASSWORD: ${{ inputs.ossrh-token }}

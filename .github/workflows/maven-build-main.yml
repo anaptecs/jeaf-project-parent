@@ -16,3 +16,6 @@ on:
 jobs:
   build:
     uses: anaptecs/jeaf-project-parent/.github/workflows/maven-build-main-template.yml@main
+    with:
+      ossrh-user: ${{ secrets.OSSRH_USERNAME }}
+      ossrh-token: ${{ secrets.OSSRH_TOKEN }}
