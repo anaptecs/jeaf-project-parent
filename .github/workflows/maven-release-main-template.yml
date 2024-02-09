@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Maven Release Build
+name: Maven Release Build Template
 
 on:
   workflow_call:
