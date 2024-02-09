@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Maven Build Main (Java 11)
+name: Maven Build Main
 
 on:
   push:
@@ -15,4 +15,4 @@ on:
 
 jobs:
   anaptecs-job:
-    uses: anaptecs/jeaf-project-parent/.github/workflows/maven-build-feature-template.yml@main
+    uses: anaptecs/jeaf-project-parent/.github/workflows/maven-build-main-template.yml@main
