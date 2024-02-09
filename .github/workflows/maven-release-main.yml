@@ -20,12 +20,6 @@ on:
         required: true
         type: string
 
-env:
-  RELEASE_VERSION: ${{ inputs.releaseVersion }}
-  TAG_NAME: ${{ inputs.tagName }}
-
-
-
 jobs:
   build:
     uses: anaptecs/jeaf-project-parent/.github/workflows/maven-release-main-template.yml@main
