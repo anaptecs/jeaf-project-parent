@@ -33,6 +33,7 @@ jobs:
         
     - run: git config --global user.email "jeaf@anaptecs.de"
     - run: git config --global user.name "JEAF Development Team"
+    - run: git config --global safe.directory "*"
         
     - name: Build and Publish packages
       run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" --batch-mode release:prepare release:perform -PRelease
