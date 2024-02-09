@@ -30,6 +30,6 @@ jobs:
   build:
     uses: anaptecs/jeaf-project-parent/.github/workflows/maven-release-main-template.yml@main
     with:
-      releaseVersion: ${{RELEASE_VERSION}}
-      tagName: ${{TAG_NAME}}
+      releaseVersion: RELEASE_VERSION
+      tagName: TAG_NAME
     secrets: inherit
