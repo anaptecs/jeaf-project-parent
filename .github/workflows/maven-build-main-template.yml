@@ -35,7 +35,7 @@ jobs:
         server-password: MAVEN_PASSWORD
 
     - name: Build and Publish packages
-      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" --batch-mode clean deploy
+      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -DdeployAtEnd --batch-mode clean deploy
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}      
