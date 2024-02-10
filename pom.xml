@@ -89,7 +89,7 @@
 
 		<!-- Versions of dependent libraries -->
 		<junit.version>5.10.2</junit.version>
-		<junit.platform.version>1.5.2</junit.platform.version>
+		<junit.platform.version>1.10.2</junit.platform.version>
 		<junit3.version>3.8.2</junit3.version>
 
 		<!-- Add properties for SonarCloud code analysis -->
