@@ -26,7 +26,7 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.m2/repository
-        key: anaptecs-cache
+        key: maven-repo-cache
       
     - name: Set up JDK (Java ${{ matrix.java }})
       uses: actions/setup-java@v4
