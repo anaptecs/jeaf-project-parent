@@ -68,7 +68,7 @@
 		<maven.jar.version>3.2.0</maven.jar.version>
 		<maven.javadoc.version>3.6.3</maven.javadoc.version>
 		<maven.sonar.version>3.7.0.1746</maven.sonar.version>
-		<maven.source.version>3.2.1</maven.source.version>
+		<maven.source.version>3.3.0</maven.source.version>
 		<maven.versions.version>2.7</maven.versions.version>
 		<maven.enforcer.version>3.0.0-M2</maven.enforcer.version>
 		<maven.war.version>3.2.2</maven.war.version>
