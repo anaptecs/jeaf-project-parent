@@ -35,5 +35,5 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven (Java ${{ matrix.java }})
-      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -B clean install
+      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean install
       
