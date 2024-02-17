@@ -27,7 +27,7 @@ env:
 jobs:
   build:
 
-    runs-on: ubuntu-latest-m
+    runs-on: linux-runner-8-core
 
     steps:
     - name: Checkout
