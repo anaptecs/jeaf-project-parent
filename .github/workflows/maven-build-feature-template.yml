@@ -9,11 +9,20 @@ name: Maven Build Feature Branch
 
 on:
   workflow_call:
+    inputs:
+      runner:
+        description: 'Runner'
+        required: false
+        default: 'ubuntu-latest'
+        type: string 
+
+env:
+  RUNNER: ${{ inputs.runner }}
   
 jobs:
   build:
 
-    runs-on: linux-runner-8-core
+    runs-on: $RUNNER
     strategy:
       matrix:
         java: [ '11', '17', '21' ]
