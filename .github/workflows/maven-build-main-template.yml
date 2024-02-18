@@ -10,11 +10,17 @@ name: Maven Build Main Template
 
 on:
   workflow_call:
+    inputs:
+      runner:
+        description: 'Runner'
+        required: false
+        default: 'ubuntu-latest'
+        type: string 
 
 jobs:
   build:
 
-    runs-on: linux-runner-8-core
+    runs-on: ${{ inputs.runner }}
 
     steps:
     - uses: actions/checkout@v4

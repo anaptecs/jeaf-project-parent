@@ -16,9 +16,6 @@ on:
         default: 'ubuntu-latest'
         type: string 
 
-env:
-  RUNNER: ${{ inputs.runner }}
-  
 jobs:
   build:
 

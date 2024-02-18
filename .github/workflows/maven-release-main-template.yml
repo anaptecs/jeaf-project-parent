@@ -11,6 +11,11 @@ name: Maven Release Build Template
 on:
   workflow_call:
     inputs:
+      runner:
+        description: 'Runner'
+        required: false
+        default: 'ubuntu-latest'
+        type: string 
       releaseVersion:
         description: 'Release version'
         required: true
@@ -27,7 +32,7 @@ env:
 jobs:
   build:
 
-    runs-on: linux-runner-8-core
+    runs-on: ${{ inputs.runner }}
 
     steps:
     - name: Checkout
