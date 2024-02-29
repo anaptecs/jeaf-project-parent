@@ -59,10 +59,11 @@ jobs:
         git config --global user.name ${{ github.actor }}
         git config --global user.email "jeaf@anaptecs.de"
         git config --global user.name "JEAF Development Team"
+        git config --global credential.helper cache
         
     - name: Prepare release
       run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare -PRelease
-      shell: bash
+      shell: sh
       env:
         SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
@@ -70,7 +71,7 @@ jobs:
 
     - name: Deploy packages
       run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -Dusername=jeaf-anaptecs -Dpassword=$GH_TOKEN -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:perform -PRelease
-      shell: bash
+      shell: sh
       env:
         SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
