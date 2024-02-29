@@ -61,7 +61,7 @@ jobs:
         git config --global user.name "JEAF Development Team"
         
     - name: Prepare release
-      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
+      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare -PRelease
       shell: bash
       env:
         SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
