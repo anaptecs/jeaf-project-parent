@@ -70,7 +70,7 @@ jobs:
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}  
 
     - name: Deploy packages
-      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -Dusername=jeaf-anaptecs -Dpassword=$GH_TOKEN -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:perform -PRelease
+      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -Dusername=jeaf-anaptecs -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:perform -PRelease
       shell: sh
       env:
         SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
