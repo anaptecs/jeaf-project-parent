@@ -53,8 +53,6 @@ jobs:
         server-username: MAVEN_USERNAME
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         gpg-passphrase: SIGN_KEY_PASS
-        git.scm: github
-        git.scm.username: jeaf-anaptecs
         
     - name: Configure git user
       run: |
@@ -67,7 +65,7 @@ jobs:
       run: cat /home/runner/.m2/settings.xml
         
     - name: Prepare and Publish Release
-      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -Dusername=jeaf-anaptecs -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
+      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
       shell: sh
       env:
         SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
