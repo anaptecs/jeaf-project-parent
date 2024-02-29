@@ -53,6 +53,8 @@ jobs:
         server-username: MAVEN_USERNAME
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         gpg-passphrase: SIGN_KEY_PASS
+        git.scm: github
+        git.scm.username: jeaf-anaptecs
         
     - name: Configure git user
       run: |
