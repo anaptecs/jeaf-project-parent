@@ -4,7 +4,7 @@
 
 	<groupId>com.anaptecs.jeaf</groupId>
 	<artifactId>jeaf-project-parent</artifactId>
-	<version>1.0.43</version>
+	<version>1.0.43-SNAPSHOT</version>
 
 
 	<packaging>pom</packaging>
