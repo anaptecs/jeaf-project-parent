@@ -61,13 +61,15 @@ jobs:
         git config --global user.name "JEAF Development Team"
         git config --global credential.helper cache
         
+    - name: View settings.xml
+      run: cat /home/runner/.m2/settings.xml
+        
     - name: Prepare and Publish Release
-      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
+      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -username=jeaf-anaptecs -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
       shell: sh
       env:
         SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}  
-        GH_TOKEN: $${{ secrets.CLONE_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
