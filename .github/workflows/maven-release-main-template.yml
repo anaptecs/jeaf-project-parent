@@ -49,21 +49,22 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-        #server-id: ossrh
-        #server-username: MAVEN_USERNAME
-        server-id: github
+        server-id: ossrh
+        server-username: MAVEN_USERNAME
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         gpg-passphrase: SIGN_KEY_PASS
         
     - name: Configure git user
       run: |
+        git config --global user.name ${{ github.actor }}
         git config --global user.email "jeaf@anaptecs.de"
         git config --global user.name "JEAF Development Team"
         
     - name: Build and Publish packages
-      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
+      run: mvn -Darguments="-Duser.country=DE -Duser.language=de -Duser.timezone=Europe/Berlin -Dusername=$GIT_USER" -DreleaseVersion=$RELEASE_VERSION -Dtag=$TAG_NAME --batch-mode release:prepare release:perform -PRelease
       shell: bash
       env:
         SIGN_KEY_PASS: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}  
+        GIT_USER: ${{ github.actor }}
