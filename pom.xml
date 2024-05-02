@@ -65,8 +65,8 @@
 		<!-- Versions for Maven Plugins -->
 		<maven.antrun.version>1.8</maven.antrun.version>
 		<maven.assembly.version>3.2.0</maven.assembly.version>
-		<maven.build.helper.version>3.0.0</maven.build.helper.version>
-		<maven.compiler.version>3.8.0</maven.compiler.version>
+		<maven.build.helper.version>3.5.0</maven.build.helper.version>
+		<maven.compiler.version>3.13.0</maven.compiler.version>
 		<maven.jar.version>3.4.0</maven.jar.version>
 		<maven.javadoc.version>3.6.3</maven.javadoc.version>
 		<maven.sonar.version>3.7.0.1746</maven.sonar.version>
@@ -79,7 +79,7 @@
 		<maven.surefire.version>3.0.0-M3</maven.surefire.version>
 		<maven.gpg.version>1.6</maven.gpg.version>
 		<maven.release.version>3.0.1</maven.release.version>
-		<maven.nexus-staging.version>1.6.8</maven.nexus-staging.version>
+		<maven.nexus-staging.version>1.6.13</maven.nexus-staging.version>
 		<maven.ear.version>3.0.2</maven.ear.version>
 		<maven.plugin.plugin.version>3.6.0</maven.plugin.plugin.version>
 		<maven.failsafe.version>2.22.2</maven.failsafe.version>
