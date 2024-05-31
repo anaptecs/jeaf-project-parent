@@ -71,7 +71,7 @@
 		<maven.javadoc.version>3.6.3</maven.javadoc.version>
 		<maven.sonar.version>4.0.0.4121</maven.sonar.version>
 		<maven.source.version>3.3.1</maven.source.version>
-		<maven.deploy.version>3.1.1</maven.deploy.version>
+		<maven.deploy.version>3.1.2</maven.deploy.version>
 		<maven.versions.version>2.16.2</maven.versions.version>
 		<maven.enforcer.version>3.5.0</maven.enforcer.version>
 		<maven.war.version>3.2.2</maven.war.version>
