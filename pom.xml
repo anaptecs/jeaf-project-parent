@@ -68,7 +68,7 @@
 		<maven.build.helper.version>3.6.0</maven.build.helper.version>
 		<maven.compiler.version>3.13.0</maven.compiler.version>
 		<maven.jar.version>3.4.2</maven.jar.version>
-		<maven.javadoc.version>3.7.0</maven.javadoc.version>
+		<maven.javadoc.version>3.11.2</maven.javadoc.version>
 		<maven.sonar.version>4.0.0.4121</maven.sonar.version>
 		<maven.source.version>3.3.1</maven.source.version>
 		<maven.deploy.version>3.1.2</maven.deploy.version>
