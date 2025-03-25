@@ -22,7 +22,7 @@ jobs:
     runs-on: ${{ inputs.runner }}
     strategy:
       matrix:
-        java: [ '11', '17', '21' ]
+        java: [ '11', '17', '21', '24' ]
 
     name: Maven Feature Branch Build (Java ${{ matrix.java }})
     steps:
