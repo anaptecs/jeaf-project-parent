@@ -66,7 +66,7 @@
 		<maven.antrun.version>1.8</maven.antrun.version>
 		<maven.assembly.version>3.2.0</maven.assembly.version>
 		<maven.build.helper.version>3.6.1</maven.build.helper.version>
-		<maven.compiler.version>3.14.0</maven.compiler.version>
+		<maven.compiler.version>3.14.1</maven.compiler.version>
 		<maven.jar.version>3.4.2</maven.jar.version>
 		<maven.javadoc.version>3.12.0</maven.javadoc.version>
 		<maven.sonar.version>5.2.0.4988</maven.sonar.version>
