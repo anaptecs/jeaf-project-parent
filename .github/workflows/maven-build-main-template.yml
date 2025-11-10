@@ -41,8 +41,7 @@ jobs:
         server-password: MAVEN_PASSWORD
 
     - name: Build and Publish packages
-      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
+      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean install
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
-        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}      
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
