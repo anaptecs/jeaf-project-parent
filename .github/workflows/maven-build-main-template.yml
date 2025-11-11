@@ -48,7 +48,7 @@ jobs:
             {
               "id": "github",
               "name": "anaptecs GitHub Snapshot Maven Repo",
-              "url": "https://maven.pkg.github.com/anaptecs/maven-snapshots",
+              "url": "https://maven.pkg.github.com/anaptecs",
               "releases": {
                 "enabled": "false"
               },
@@ -64,7 +64,7 @@ jobs:
             {
               "id": "github",
               "username": "${env.GITHUB_USERNAME}",
-              "password": "${env.SNAPSHOT_REPO_TOKEN}",
+              "password": "${env.GITHUB_TOKEN}",
               "configuration": {
                 "httpConfiguration": {
                   "all": {
@@ -83,4 +83,3 @@ jobs:
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
         GITHUB_USERNAME: x-access-token
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SNAPSHOT_REPO_TOKEN: ${{secrets.SNAPSHOT_REPO_TOKEN}}
