@@ -74,7 +74,8 @@ jobs:
               }
             }
           ]    
-      output_file: ~/.m2/settings.xml          
+        output_file: ~/.m2/settings.xml       
+      
     - name: Build and Publish packages
       run: mvn --settings ~/.m2/settings.xml -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
       env:
