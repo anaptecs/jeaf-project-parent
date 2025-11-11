@@ -44,7 +44,7 @@ jobs:
       uses: whelk-io/maven-settings-xml-action@v22
       with:
         repositories: >
-          '[
+          [
             {
               "id": "github",
               "name": "anaptecs GitHub Snapshot Maven Repo",
@@ -58,23 +58,7 @@ jobs:
                 "checksumPolicy": "fail"
               }
             }
-          ]'
-        servers: >
-          '[
-            {
-              "id": "github",
-              "username": "${env.GITHUB_USERNAME}",
-              "password": "${env.GITHUB_TOKEN}",
-              "configuration": {
-                "httpConfiguration": {
-                  "all": {
-                    "usePreemptive": "true"
-                  }
-                }
-              }
-            }
-          ]'    
-        output_file: '~/.m2/settings.xml'
+          ]
       
     - name: Build and Publish packages
       run: mvn --settings ~/.m2/settings.xml -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
