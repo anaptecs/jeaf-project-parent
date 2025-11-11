@@ -36,12 +36,34 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        server-id: central
-        server-username: MAVEN_USERNAME
-        server-password: MAVEN_PASSWORD
 
+    - name: maven-settings-xml-action
+      uses: s4u/maven-settings-action@v4.0.0
+      with:
+        repositories: >
+          [
+            {
+              "id": "github",
+              "name": "anaptecs GitHub Snapshot Maven Repo",
+              "url": "https://maven.pkg.github.com/anaptecs/*",
+              "snapshots": {
+                "enabled": "true"
+              }
+            }
+          ]
+        servers: >
+          [
+            {
+              "id": "github",
+              "username": "${env.GITHUB_USERNAME}",
+              "password": "${env.GITHUB_TOKEN}"
+            }
+          ]    
+      
     - name: Build and Publish packages
-      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean install
+      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+        GITHUB_USERNAME: x-access-token
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
