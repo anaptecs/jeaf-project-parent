@@ -46,7 +46,7 @@ jobs:
         repositories: >
           [
             {
-              "id": "github",
+              "id": "github-repo",
               "name": "anaptecs GitHub Snapshot Maven Repo",
               "url": "https://maven.pkg.github.com/anaptecs/*",
               "snapshots": {
