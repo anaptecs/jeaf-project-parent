@@ -35,19 +35,6 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-	<repositories>
-		<repository>
-			<id>central-portal-snapshots</id>
-			<url>https://maven.pkg.github.com/anaptecs/*</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	
 	<licenses>
 		<license>
 			<name>The Apache License, Version 2.0</name>
