@@ -40,6 +40,21 @@ jobs:
         java-version: ${{ matrix.java }}
         distribution: 'temurin'
 
+    - name: maven-settings-xml-action
+      uses: s4u/maven-settings-action@v4.0.0
+      with:
+        repositories: >
+          [
+            {
+              "id": "github",
+              "name": "anaptecs GitHub Snapshot Maven Repo",
+              "url": "https://maven.pkg.github.com/anaptecs/*",
+              "snapshots": {
+                "enabled": "true"
+              }
+            }
+          ]
+          
     - name: Build with Maven (Java ${{ matrix.java }})
       run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean install
       
