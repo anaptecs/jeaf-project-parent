@@ -41,7 +41,7 @@ jobs:
         server-password: MAVEN_PASSWORD
 
     - name: Build and Publish packages
-      run: mvn --settings /anaptecs/jeaf-project-parent/.github/workflows/settings.xml -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
+      run: mvn --settings anaptecs/jeaf-project-parent/.github/workflows/settings.xml -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
       env:
         MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
