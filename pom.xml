@@ -24,14 +24,21 @@
 	<scm>
 		<connection>scm:git:https://github.com/anaptecs/jeaf-project-parent.git</connection>
 		<developerConnection>scm:git:https://github.com/anaptecs/jeaf-project-parent.git</developerConnection>
-		<url>https://github.com/anaptecs/jeaf-project-parent.git</url>
+		<url>https://github.com/anaptecs/jeaf-project-parent</url>
 		<tag>HEAD</tag>
 	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/anaptecs/jeaf-project-parent</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<repositories>
 		<repository>
 			<id>central-portal-snapshots</id>
-			<url>https://central.sonatype.com/repository/maven-snapshots/</url>
+			<url>https://maven.pkg.github.com/anaptecs/*</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
