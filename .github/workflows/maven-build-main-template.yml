@@ -40,6 +40,41 @@ jobs:
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
 
+    - name: maven-settings-xml-action
+      uses: whelk-io/maven-settings-xml-action@v22
+      with:
+        repositories: >
+          [
+            {
+              "id": "github",
+              "name": "anaptecs GitHub Snapshot Maven Repo",
+              "url": "https://maven.pkg.github.com/anaptecs",
+              "releases": {
+                "enabled": "false",
+              },
+              "snapshots": {
+                "enabled": "true",
+                "updatePolicy": "always",
+                "checksumPolicy": "fail"
+              }
+            }
+          ]
+        servers: >
+          [
+            {
+              "id": "github",
+              "username": "${env.GITHUB_USERNAME}",
+              "password": "${env.GITHUB_TOKEN}",
+              "configuration": {
+                "httpConfiguration": {
+                  "all": {
+                    "usePreemptive": "true"
+                  }
+                }
+              }
+            }
+          ]    
+          
     - name: Build and Publish packages
       run: mvn --settings anaptecs/jeaf-project-parent/.github/workflows/settings.xml -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
       env:
