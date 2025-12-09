@@ -71,7 +71,6 @@
 		<maven.plugin.plugin.version>3.6.0</maven.plugin.plugin.version>
 		<maven.failsafe.version>2.22.2</maven.failsafe.version>
 		<maven.wildfly.version>2.0.2.Final</maven.wildfly.version>
-		<maven.jacoco.version>0.8.14</maven.jacoco.version>
 		<maven.scmplugin.version>2.2.1</maven.scmplugin.version>
 		
 		<swagger.codegen.plugin.version>3.0.34</swagger.codegen.plugin.version>
@@ -81,14 +80,6 @@
 		<junit.version>5.13.4</junit.version>
 		<junit.platform.version>1.12.2</junit.platform.version>
 		<junit3.version>3.8.2</junit3.version>
-
-		<!-- Add properties for SonarCloud code analysis -->
-		<sonar.projectKey>${project.artifactId}</sonar.projectKey>
-		<sonar.organization>jeaf</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.scm.disabled>true</sonar.scm.disabled>
-		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-		<sonar.scanner.force-deprecated-java-version>true</sonar.scanner.force-deprecated-java-version>
 
 		<!-- Additional project settings -->
 		<java.release.version>11</java.release.version>
@@ -207,20 +198,6 @@
 						</executions>
 					</plugin>
 
-					<!--
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>${maven.nexus-staging.version}</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
-							<skipStagingRepositoryClose>true</skipStagingRepositoryClose>
-						</configuration>
-					</plugin>
-					-->
 					<plugin>
 						<groupId>org.sonatype.central</groupId>
 						<artifactId>central-publishing-maven-plugin</artifactId>
@@ -377,12 +354,6 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.sonarsource.scanner.maven</groupId>
-				<artifactId>sonar-maven-plugin</artifactId>
-				<version>${maven.sonar.version}</version>
-			</plugin>
-
-			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
 				<version>${maven.versions.version}</version>
@@ -421,26 +392,6 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-
-			<plugin>
-			    <groupId>org.jacoco</groupId>
-			    <artifactId>jacoco-maven-plugin</artifactId>
-				<version>${maven.jacoco.version}</version>
-			    <executions>
-			        <execution>
-			            <goals>
-			                <goal>prepare-agent</goal>
-			            </goals>
-			        </execution>
-			        <execution>
-			            <id>report</id>
-			            <phase>prepare-package</phase>
-			            <goals>
-			                <goal>report</goal>
-			            </goals>
-			        </execution>
-			    </executions>
 			</plugin>
 		</plugins>
 	</build>
