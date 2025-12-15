@@ -65,6 +65,19 @@ jobs:
               }
             }
           ]
+        servers: >
+          [
+            {
+              "id": "github-repo",
+              "username": "${env.GITHUB_USERNAME}",
+              "password": "${env.GITHUB_TOKEN}"
+            },
+            {
+              "id": "github-plugin-repo",
+              "username": "${env.GITHUB_USERNAME}",
+              "password": "${env.GITHUB_TOKEN}"
+            }
+          ]    
           
     - name: Build with Maven (Java ${{ matrix.java }})
       run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean install
