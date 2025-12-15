@@ -53,7 +53,7 @@ jobs:
                 "enabled": "true"
               }
             }
-          ]
+          ],
         pluginRepositories: >
           [
             {

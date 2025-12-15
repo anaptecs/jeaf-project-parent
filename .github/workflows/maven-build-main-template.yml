@@ -50,7 +50,7 @@ jobs:
                 "enabled": "true"
               }
             }
-          ]
+          ],
         pluginRepositories: >
           [
             {
