@@ -56,7 +56,6 @@
 		<maven.compiler.version>3.14.1</maven.compiler.version>
 		<maven.jar.version>3.5.0</maven.jar.version>
 		<maven.javadoc.version>3.12.0</maven.javadoc.version>
-		<maven.sonar.version>5.3.0.6276</maven.sonar.version>
 		<maven.source.version>3.4.0</maven.source.version>
 		<maven.deploy.version>3.1.4</maven.deploy.version>
 		<maven.versions.version>2.20.1</maven.versions.version>
