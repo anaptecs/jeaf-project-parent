@@ -77,7 +77,7 @@ jobs:
           ]    
       
     - name: Build and Publish packages
-      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
+      run: mvn -Djava.net.preferIPv4Stack=true -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -U -B clean deploy
       env:
         GITHUB_USERNAME: x-access-token
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
