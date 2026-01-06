@@ -49,6 +49,9 @@ jobs:
               "id": "github",
               "name": "anaptecs GitHub Snapshot Maven Repo",
               "url": "https://maven.pkg.github.com/anaptecs/*",
+              "releases": {
+                "enabled": "false"
+              }
               "snapshots": {
                 "enabled": "true"
               }
