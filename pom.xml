@@ -71,6 +71,7 @@
 		<maven.failsafe.version>2.22.2</maven.failsafe.version>
 		<maven.wildfly.version>2.0.2.Final</maven.wildfly.version>
 		<maven.scmplugin.version>2.2.1</maven.scmplugin.version>
+		<maven.central-publishing.version>0.10.0</maven.central-publishing.version>
 		
 		<swagger.codegen.plugin.version>3.0.34</swagger.codegen.plugin.version>
 		<openapi-validator-plugin>1.0.2</openapi-validator-plugin>
@@ -200,7 +201,7 @@
 					<plugin>
 						<groupId>org.sonatype.central</groupId>
 						<artifactId>central-publishing-maven-plugin</artifactId>
-						<version>0.10.0</version>
+						<version>${maven.central-publishing.version}</version>
 						<extensions>true</extensions>
 						<configuration>
 							<publishingServerId>central</publishingServerId>
@@ -394,5 +395,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
