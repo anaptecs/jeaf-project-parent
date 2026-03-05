@@ -82,7 +82,7 @@
 		<junit3.version>3.8.2</junit3.version>
 
 		<!-- Additional project settings -->
-		<java.release.version>11</java.release.version>
+		<java.release.version>17</java.release.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss.SSS</maven.build.timestamp.format>
 		<dest.dir>../target</dest.dir>
