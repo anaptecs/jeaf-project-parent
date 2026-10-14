@@ -54,6 +54,11 @@ jobs:
         server-password: MAVEN_PASSWORD
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         gpg-passphrase: SIGN_KEY_PASS
+
+    - name: Enforce Maven 3.9.*
+      uses: stCarolas/setup-maven@v5
+      with:
+        maven-version: 3.9.16
         
     - name: Configure git user
       run: |
