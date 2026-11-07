@@ -12,9 +12,9 @@ on:
   workflow_call:
     inputs:
       runner:
-        description: 'Runner'
+        description: 'Runner. Default: ARM for public repositories, ubuntu-latest for private ones (free minutes)'
         required: false
-        default: 'ubuntu-24.04-arm'
+        default: ''
         type: string 
       releaseVersion:
         description: 'Release version'
@@ -32,7 +32,7 @@ env:
 jobs:
   build:
 
-    runs-on: ${{ inputs.runner }}
+    runs-on: ${{ inputs.runner != '' && inputs.runner || (github.event.repository.private && 'ubuntu-latest' || 'ubuntu-24.04-arm') }}
 
     steps:
     - name: Checkout
