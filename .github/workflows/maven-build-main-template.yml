@@ -80,7 +80,7 @@ jobs:
           ]    
       
     - name: Build and Publish packages
-      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -B clean deploy
+      run: mvn -Duser.country=DE -Duser.language=de -Duser.timezone="Europe/Berlin" -DaltDeploymentRepository=github::https://maven.pkg.github.com/${{ github.repository }} -B clean deploy
       env:
         GITHUB_USERNAME: x-access-token
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
